@@ -19,6 +19,7 @@ import java.util.Arrays;
 
 @Component
 @Order(1)
+
 public class TestRepos implements CommandLineRunner {
 
     @Autowired
