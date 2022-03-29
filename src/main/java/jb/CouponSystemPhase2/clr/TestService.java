@@ -104,9 +104,9 @@ public class TestService implements CommandLineRunner {
         try {
             System.out.println(loginManager.login("aadmin@admin.com", "admin", ClientType.Administrator)); //wrong email
         } catch (Exception e) {
-            System.out.println("--------------->Test Error<-------------");
+            System.out.println(ANSI_RED);
             System.out.println(e);
-            System.out.println("--------------->Test Error<-------------");
+            System.out.println(ANSI_WHITE);
 
         }
 
