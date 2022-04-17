@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 public class Company {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  //remember this is AUTOINCREMENT
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "Name", nullable = false)

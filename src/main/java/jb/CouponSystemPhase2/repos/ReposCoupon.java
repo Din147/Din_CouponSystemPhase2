@@ -40,6 +40,12 @@ public interface ReposCoupon extends JpaRepository<Coupon, Integer> {
     @Modifying
     @Query(value = "DELETE FROM customers_coupons WHERE customers_id = ?", nativeQuery = true)
     void DeleteCustomerPurchaseHistory(int customers_id);
+
+
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE coupons SET Amount = (select amount - 1) WHERE id=?", nativeQuery = true)
+    void purchasedCouponAmountMinusOne(int couponsId);
 }
 
 

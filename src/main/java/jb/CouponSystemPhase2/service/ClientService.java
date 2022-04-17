@@ -22,4 +22,6 @@ public abstract class ClientService {
     protected ReposCoupon reposCoupon;
 
     public abstract boolean login(String email, String password) throws CouponSystemException;
+
+
 }

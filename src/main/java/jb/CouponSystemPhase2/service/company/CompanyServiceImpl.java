@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 @Service
 @Scope("prototype")
-// TODO: 21-Mar-22 to delete prototype 
 public class CompanyServiceImpl extends ClientService implements CompanyService {
     private int companyId;
 
@@ -43,7 +42,7 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
     @Override
     public void deleteCoupon(int couponId) throws CouponSystemException {
         if (!reposCoupon.existsById(couponId)) throw new CouponSystemException(ErrMsg.NOT_Exist);
-        reposCoupon.deleteById(couponId); //!!need to delete from customer!!
+        reposCoupon.deleteById(couponId);
     }
 
     @Override

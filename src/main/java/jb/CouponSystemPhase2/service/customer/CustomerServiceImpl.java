@@ -15,9 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-// TODO: 18-Mar-22 to read more about prototype to delete prototype
 @Scope("prototype")
-
 public class CustomerServiceImpl extends ClientService implements CustomerService {
     private int costumerId;
 
@@ -40,13 +38,9 @@ public class CustomerServiceImpl extends ClientService implements CustomerServic
             if (couponFromDB.getEndDate().getTime() < (Date.valueOf(LocalDate.now())).getTime())
                 throw new CouponSystemException(ErrMsg.DATE_NOT_VALID);
         }
-
         reposCustomer.getById(costumerId).getCustomerCoupons().add(coupon);
         customerVSCoupon(costumerId, coupon.getId());
-        int tempAmount = couponFromDB.getAmount();
-        Coupon CouponTemp = couponFromDB;
-        CouponTemp.setAmount(tempAmount - 1);
-        reposCoupon.saveAndFlush(CouponTemp);
+        reposCoupon.purchasedCouponAmountMinusOne(coupon.getId());
     }
 
     @Override

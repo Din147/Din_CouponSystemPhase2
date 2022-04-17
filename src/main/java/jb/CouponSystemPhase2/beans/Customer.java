@@ -30,7 +30,7 @@ public class Customer {
 
 
     @ToString.Exclude
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @Singular
     private List<Coupon> customerCoupons = new ArrayList<>();
 

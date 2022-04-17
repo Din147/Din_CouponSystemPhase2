@@ -17,7 +17,7 @@ public class DailyJob {
     @Autowired
     private ReposCoupon reposCoupon;
 
-    //@Scheduled(initialDelay = 20 * 1000, fixedDelay = 10 * 1000)   //for test
+//    @Scheduled(initialDelay = 20 * 1000, fixedDelay = 10 * 1000)   //for test
     @Scheduled(cron = "58 59 23 * * *")
     public void someJob() throws InterruptedException, CouponSystemException {
 

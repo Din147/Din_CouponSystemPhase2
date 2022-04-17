@@ -41,7 +41,6 @@ public class AdminServiceImpl extends ClientService implements AdminService {
     public void deleteCompany(int companyId) throws CouponSystemException {
         if (!reposCompany.existsById(companyId)) throw new CouponSystemException(ErrMsg.NOT_Exist);
         reposCompany.deleteById(companyId);
-        // TODO: 17-Mar-22  need to delete the in the Costumer  +need to delete the history (purchased coupons)
     }
 
     @Override
@@ -72,7 +71,6 @@ public class AdminServiceImpl extends ClientService implements AdminService {
     public void deleteCustomer(int customerId) throws CouponSystemException {
         if (!reposCustomer.existsById(customerId)) throw new CouponSystemException(ErrMsg.NOT_Exist);
         reposCustomer.deleteById(customerId);
-        // TODO: 17-Mar-22 -  !! to check
         reposCoupon.DeleteCustomerPurchaseHistory(customerId);
     }
 
